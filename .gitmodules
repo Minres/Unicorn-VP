@@ -1,0 +1,4 @@
+[submodule "dbt-rise-unicorn"]
+	path = dbt-rise-unicorn
+	url = https://github.com/Minres/dbt-rise-unicorn.git
+	branch = main
