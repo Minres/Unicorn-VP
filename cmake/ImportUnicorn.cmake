@@ -13,7 +13,7 @@ FetchContent_Declare(
     #GIT_TAG        "origin/master"
     #GIT_SHALLOW    ON
     GIT_REPOSITORY "https://github.com/Minres/unicorn.git"
-    GIT_TAG        "origin/master"
+    GIT_TAG        "2.0.0"
   	UPDATE_DISCONNECTED NOT ${UPDATE_UNICORN_SRC} # When enabled, this option causes the update step to be skipped.
 )
 FetchContent_Populate(unicorn_git)
@@ -22,7 +22,7 @@ add_custom_command(
 	COMMAND ${CMAKE_COMMAND}
 	ARGS -S ${unicorn_git_SOURCE_DIR} -B ${unicorn_git_SOURCE_DIR}/build -DCMAKE_INSTALL_PREFIX=${unicorn_git_BINARY_DIR} -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
 	COMMAND ${CMAKE_COMMAND}
-	ARGS --build ${unicorn_git_SOURCE_DIR}/build --target install
+	ARGS --build ${unicorn_git_SOURCE_DIR}/build --target install --parallel
 	DEPENDS ${unicorn_git_SOURCE_DIR})
 add_custom_target(unicorn_build  DEPENDS ${unicorn_git_BINARY_DIR}/lib/libunicorn.so)
 
