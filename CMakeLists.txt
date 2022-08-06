@@ -77,3 +77,4 @@ include(SystemCPackage)
 
 add_subdirectory(dbt-rise-unicorn)
 add_subdirectory(src)
+add_subdirectory(fw)
